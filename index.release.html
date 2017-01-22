@@ -1,0 +1,40 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <meta http-equiv="Content-Security-Policy" content="default-src *; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline' 'unsafe-eval'">
+    <meta http-equiv="content-type" content="text/html; charset=windows-1254" />
+    <title></title>
+    <link href="css/index.min.css" rel="stylesheet">
+    <!-- Deneme
+    <link href="lib/ionic/css/ionic.css" rel="stylesheet">
+    <link href="lib/ion-md-input/css/ion-md-input.min.css" rel="stylesheet">
+    <link href="lib/ionic-material/dist/ionic.material.min.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <script src="lib/ionic/js/ionic.bundle.js"></script>
+    <script src="lib/ionic-material/dist/ionic.material.min.js"></script>
+    <script src="lib/ion-md-input/js/ion-md-input.min.js"></script>
+    <!--Deneme Son-->
+</head>
+<body>
+    <ion-nav-view></ion-nav-view>
+    <script type="text/javascript" src="cordova.js"></script>
+    <script src="dist/infrastructure/core/require.js" data-main="dist/infrastructure/config/main"></script>
+    <script type="text/javascript">
+        var hareketid_cache_key = "ynl.hareketid";
+        //Emailden acilinca çalişan fonksiyon
+        function handleOpenURL(url) {
+            setTimeout(function () {
+                var hareketId = url.split('/').pop();
+                console.log('app fired from mail with id : ' + hareketId);
+                window.sessionStorage.setItem(hareketid_cache_key, hareketId);
+            }, 300);
+        };
+        //Hack for optimization encoding problem
+        var utf8toturkish = [{ "İ": "Ä°" }, { "ı": "Ä±" }, { "Ö": "Ã–" }, { "ö": "Ã¶" },
+                           { "Ü": "Ãœ" }, { "ü": "Ã¼" }, { "Ç": "Ã‡" }, { "ç": "Ã§" },
+                           { "ğ": "ÄŸ" }, { "Ğ": "Ä" }, { "ş": "ÅŸ" }, { "Ş": "Å" }];
+    </script>
+</body>
+</html>

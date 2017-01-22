@@ -1,0 +1,320 @@
+<style>
+@import url('https://fonts.googleapis.com/css?family=Lato');
+
+    ion-header-bar.oboy-bar, ion-nav-bar.nav-bar-container {
+        background-color: #27ba83;
+    }
+    
+    ion-header-bar.filter-bar
+    {
+        background-color: #2f3b51;
+    }
+
+    .hamburger-bar {
+        background-color: #273244;
+        height: 15% !important;
+        border-bottom-color: rgba(0,0,0,0);
+    }
+
+    .ion-navicon, .back-button, .title-center, .ion-ios-close-empty, .ion-ios-search {
+        color: white !important;
+    }
+
+    .ion-alert-circled {
+        color: red;
+    }
+
+    .ion-checkmark-round, .ion-calendar, .ion-plane, .ion-ios-more, .ion-ios-plus-outline {
+        color: rgb(0, 136, 200);
+    }
+
+    .bar-calm {
+        border-radius: 5px;
+        margin: 5px;
+    }
+
+    .mh-slide {
+      -webkit-transform: translate3d(0, 0, 0) scale(0);
+      transform: translate3d(0, 0, 0) scale(0);
+      opacity: 0
+    /*    transform: rotate(0deg) scale(0.761) skew(1deg) translate(0px);*/
+    }
+
+    .mh-slide.ng-enter, .mh-slide > .ng-enter {
+      -webkit-transition: all cubic-bezier(0.1, 0.7, 0.1, 1) 400ms;
+      transition: all cubic-bezier(0.1, 0.7, 0.1, 1) 400ms; }
+
+    .mh-slide.ng-enter-active, .mh-slide > .ng-enter-active {
+        -webkit-transform: translate3d(0, 0, 0) scale(1);
+      transform: translate3d(0, 0, 0) scale(1);
+      opacity: 1;
+    }
+
+    .mh-slide.ng-leave, .mh-slide > .ng-leave {
+      -webkit-transition: all ease-in-out 250ms;
+      transition: all ease-in-out 250ms; }
+
+    .searchBar {
+        width: 50%;
+        font-size: 12px;
+        font-weight: bold;
+        color: #27ba83 !important;
+        z-index: 99999;
+        position: relative;
+        text-align: center;
+        margin: 0 auto;
+        left: 33px;
+    }
+    ::-webkit-input-placeholder {
+        color: #27ba83 !important;
+    }
+
+    :-moz-placeholder { /* Firefox 18- */
+        color: #27ba83 !important;
+    }
+
+    ::-moz-placeholder {  /* Firefox 19+ */
+        color: #27ba83 !important;
+    }
+
+    :-ms-input-placeholder {  
+        color: #27ba83 !important;
+    }
+
+    .headerFilterIcon {
+        color: white !important;
+    }
+
+    .headerFilterClose {
+        color: white !important;
+    }
+
+    .filterTitle {
+        color: white;
+    }
+
+    .profilPic {
+        margin: 0 auto;
+        background: none !important; 
+        background-color: none !important; 
+        border: none !important;
+        top: 45%;
+    }
+
+    .profilPic > img {
+        width: 100% !important;
+        margin: 0 auto !important;
+    }
+
+    .hamburgerSub {
+        background-color: #2f3b51;
+    }
+
+    .hamburgerList > a {
+        background-color: #2f3b51 !important;
+        border-color: #27ba84;
+        padding-top: 10%;
+        color: white;
+        border-left: none !important;
+        border-right: none !important;
+        font-weight: bold;
+    }
+
+    .hamburgerList > a:first-child {
+        border-top: none !important;
+    }
+
+    .hamburgerList > a:last-child {
+        border-bottom: none !important;
+    }
+
+    .hamburgerList > a > i {
+        color:#27ba84;
+    }
+
+    .hamburgerList {
+        margin-top: 50% !important;
+        width: 90%;
+        margin: 0 auto;
+    }
+
+    .circular {
+        border-radius: 50px;
+        -webkit-border-radius: 50px;
+        -moz-border-radius: 50px;
+        box-shadow: 0 0 8px rgba(0, 0, 0, .8);
+        -webkit-box-shadow: 0 0 8px rgba(0, 0, 0, .8);
+        -moz-box-shadow: 0 0 8px rgba(0, 0, 0, .8);
+        width: 100%
+    }
+
+    .profill {
+        color: white !important;
+        white-space: pre-line;
+        font-weight: bold !important;
+        font-size: 1em !important;
+    }
+
+    .oboyFooterBar {
+        color: #27ba84;
+        display: block;
+        text-align: center;
+    }
+    .container-side-menu {
+         margin: 0 auto;
+         width: 33%;
+    }
+    .container-side-menu .button {
+        font-size: 10px;
+        line-height: 10px; // Add
+    }
+    .container-side-menu .button-icon .icon {
+        display: block;
+        font-size: 30px;
+        margin-bottom: 3px !important;
+    }
+    ion-footer-bar.oboy-footer-bar {
+        background-color: #2f3b51;
+    }
+</style> 
+
+<ion-side-menus enable-menu-with-back-views="false">
+    <ion-side-menu-content>
+        <ion-nav-bar class="bar oboy-bar">
+            <ion-nav-back-button class="button-clear">
+                <i class="ion-ios-arrow-back"></i> {{::"rota.geri" | i18n}}
+            </ion-nav-back-button>
+            <ion-nav-buttons side="left">
+                <button class="button button-icon button-clear ion-navicon" menu-toggle="left"></button>
+            </ion-nav-buttons>
+            <!--<input class="searchBar" type="search" placeholder="OBOY">-->
+            <ion-nav-buttons side="right">
+                <button class="button button-icon button-icon ion-android-options headerFilterIcon" ng-click="showFilterModal()"></button>
+            </ion-nav-buttons>
+            <!--<div class="filterIcon" ng-click="showFilterModal()">
+                <i class="ion-android-options"></i>
+            </div>-->
+        </ion-nav-bar>
+        <ion-nav-view name="home-list"></ion-nav-view>
+    </ion-side-menu-content>
+
+    <ion-side-menu side="left">
+        <ion-header-bar class="bar bar-header hamburger-bar">
+            <div class="container-side-menu">
+                <div>
+                    <button class="button button-icon profill">
+                        <img class="circular" src="img/avatar.jpg" alt=""> 
+                        ALPER B.
+                    </button>
+                </div>
+            </div>
+        </ion-header-bar>
+        <ion-content class="has-header hamburgerSub">
+            <div class="list hamburgerList">
+                <a class="item item-icon-left" ng-click="profil()">
+                    <i class="icon ion-ios-person-outline"></i>
+                    PROFİLİM
+                </a>
+                <a menu-close class="item item-icon-left" ng-click="showContactModal()">
+                    <i class="icon ion-ios-briefcase-outline"></i>
+                    İŞLERİM
+                </a>
+                <a menu-close class="item item-icon-left">
+                    <i class="icon ion-ios-list-outline"></i>
+                    BAŞVURULARIM
+                </a>
+                <a menu-close class="item item-icon-left">
+                    <i class="icon ion-ios-email-outline"></i>
+                    MESAJLARIM
+                </a>
+                <a menu-close class="item item-icon-left">
+                    <i class="icon ion-ios-gear-outline"></i>
+                    AYARLAR
+                </a>
+                <a class="item item-icon-left" ng-click="logoff()">
+                    <i class="icon ion-ios-gear-outline"></i>
+                    ÇIKIŞ
+                </a>
+            </div>
+        </ion-content>
+        <ion-footer-bar class="oboy-footer-bar" align-title="center">
+            <span class="title oboyFooterBar">OBOY BETA ÇEŞME KAMP!</span>
+        </ion-footer-bar>
+    </ion-side-menu>
+</ion-side-menus>
+<!-->Contact Form List</!-->
+<script id="templates/filter.html" type="text/ng-template">
+    <ion-modal-view>
+        <ion-header-bar align-title="center" class="bar bar-header filter-bar">
+            <h1 class="title filterTitle">FİLTRELER</h1>
+            <div class="buttons">
+                <button class="button button-icon ion-close headerFilterClose" ng-click="closeModal()"></button>
+            </div>
+        </ion-header-bar>
+        <!--<ion-header-bar class="bar bar-header filter-bar">
+            <span class="filterTitle">FİLTRELER</span>
+            
+            <i ng-click="closeModal()" class="icon ion-close filterClose"></i>
+        </ion-header-bar>-->
+        <ion-content class="no-background">
+            <div class="list list-inset">
+              <label class="item item-input item-select">
+                <div class="input-label">
+                  Kategoriler
+                </div>
+                <select>
+                  <option>Ev İşleri</option>
+                  <option selected>Evcil Hayvan</option>
+                  <option>Tercüme</option>
+                </select>
+              </label>
+              <div class="item range">
+                  Mesafe
+                  <i class="icon ion-ios7-stopwatch-outline"></i>
+                  <input type="range"
+                         name="km"
+                         min="0"
+                         max="1000"
+                         step="10"
+                         value="">
+                  <i class="icon ion-ios7-stopwatch"></i>
+                  1 km
+              </div>
+ 
+            <label class="item item-input">Minimum:
+                <input type="number" placeholder="Fiyat (TL)">
+            </label>
+            <label class="item item-input">Maksimum:
+                <input type="number" placeholder="Fiyat (TL)">
+            </label>
+            <div>
+             <ul class="list">
+              <li class="item item-toggle">
+                 Sadece Online İşler
+                 <label class="toggle toggle-calm">
+                   <input type="checkbox">
+                   <div class="track">
+                     <div class="handle"></div>
+                   </div>
+                 </label>
+              </li>
+             </ul>
+            </div>
+
+            <label class="item item-input">
+                <span class="input-label">Son Tarih</span>
+                <input ng-model="formData.checkIn" type="date">
+            </label>
+            </div>
+            <div class="padding">
+                <button class="button button-block button-balanced" ng-click="modalResult()">Kaydet</button>
+            </div>
+        </ion-content>
+    </ion-modal-view>
+</script>
+
+<script id="templates/hakkimizda.html" type="text/ng-template">
+    <div>{{'air.uygulama' | i18n}} ver {{version}}</div>
+    <div>{{'rota.bimar' | i18n}}</div>
+    <div>{{'air.hakkinda2' | i18n}}</div>
+</script>

@@ -1,0 +1,37 @@
+@import url('rota.css');
+
+body {
+  cursor: url('http://ionicframework.com/img/finger.png'), auto;
+}
+
+/*
+ * http://docs.angularjs.org/api/ng/directive/ngShow#usage_animations
+ */
+.list .item.item-accordion {
+  line-height: 38px;
+  padding-top: 0;
+  padding-bottom: 0;
+  transition: 0.09s all linear;
+}
+.list .item.item-accordion.ng-hide {
+  line-height: 0px;
+}
+.list .item.item-accordion.ng-hide-add,
+.list .item.item-accordion.ng-hide-remove {
+  display: block !important;
+}
+.leg-container .leg-column {
+    width: 34px;
+    position: relative;
+    display: block;
+    float: left;
+    background: #4CAF50;
+    text-align: center;
+    color: white;
+}
+.leg-container .leg-detail {
+    border: 1px solid #808080;
+    margin-bottom: 6px;
+    border-radius: 5px;
+    background-color: white;
+}
